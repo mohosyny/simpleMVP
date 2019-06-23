@@ -40,10 +40,12 @@ private HomeContract.Presenter presenter;
     @Override
     public void onStart() {
         super.onStart();
+        presenter.attachView(this);
     }
 
     @Override
     public void onStop() {
         super.onStop();
+        presenter.detachView();
     }
 }
