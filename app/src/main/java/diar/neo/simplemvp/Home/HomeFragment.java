@@ -8,9 +8,12 @@ import androidx.fragment.app.Fragment;
 
 import java.util.List;
 
+import diar.neo.simplemvp.R;
+import diar.neo.simplemvp.base.BaseFragment;
+import diar.neo.simplemvp.base.BasePresenter;
 import diar.neo.simplemvp.data.News;
 
-public class HomeFragment extends Fragment implements HomeContract.View {
+public class HomeFragment extends BaseFragment implements HomeContract.View {
 
 private HomeContract.Presenter presenter;
 
@@ -47,5 +50,15 @@ private HomeContract.Presenter presenter;
     public void onStop() {
         super.onStop();
         presenter.detachView();
+    }
+
+    @Override
+    public void setupViews() {
+
+    }
+
+    @Override
+    public int getLayout() {
+        return R.layout.fragment_home;
     }
 }
