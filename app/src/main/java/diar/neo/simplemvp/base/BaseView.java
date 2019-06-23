@@ -4,6 +4,5 @@ import android.content.Context;
 
 public interface BaseView {
 
-
-    Context getContextView();
+    Context getViewContext();
 }

@@ -31,7 +31,7 @@ private HomeContract.Presenter presenter;
     }
 
     @Override
-    public Context getContextView() {
+    public Context getViewContext() {
         return null;
     }
 
