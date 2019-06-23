@@ -12,6 +12,7 @@ import diar.neo.simplemvp.R;
 import diar.neo.simplemvp.base.BaseFragment;
 import diar.neo.simplemvp.base.BasePresenter;
 import diar.neo.simplemvp.data.News;
+import diar.neo.simplemvp.data.NewsRepository;
 
 public class HomeFragment extends BaseFragment implements HomeContract.View {
 
@@ -24,12 +25,17 @@ private HomeContract.Presenter presenter;
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        presenter=new HomePresenter();
+        presenter=new HomePresenter(new NewsRepository());
     }
 
 
     @Override
     public void showNews(List<News> news) {
+
+    }
+
+    @Override
+    public void showError(String s) {
 
     }
 

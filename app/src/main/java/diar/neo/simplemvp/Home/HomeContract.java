@@ -11,6 +11,7 @@ public interface HomeContract  {
      interface View extends BaseView{
 
          void showNews(List<News> news);
+         void showError(String s);
 
      }
 

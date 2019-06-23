@@ -26,7 +26,7 @@ public class ServerDataSource implements NewsDataSource {
         mApiService=retrofit.create(ApiService.class);
 
     }
-    
+
     @Override
     public Single<List<News>> getNews() {
         return mApiService.getNews();
