@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">simpleMVP</string>
+    <string name="news">اخبار</string>
+    <string name="lastNews">آخرین اخبار</string>
+    <string name="All">همه</string>
+    <string name="bests">برترین ها</string>
+    <string name="saved">نشان شده</string>
 </resources>

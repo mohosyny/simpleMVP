@@ -2,53 +2,68 @@ package diar.neo.simplemvp.Home;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
+import java.util.Objects;
 
 import diar.neo.simplemvp.R;
 import diar.neo.simplemvp.base.BaseFragment;
 import diar.neo.simplemvp.base.BasePresenter;
+import diar.neo.simplemvp.data.Banner;
 import diar.neo.simplemvp.data.News;
 import diar.neo.simplemvp.data.NewsRepository;
 
 public class HomeFragment extends BaseFragment implements HomeContract.View {
 
-private HomeContract.Presenter presenter;
-
-
-
+    private HomeContract.Presenter presenter;
+    private RecyclerView newsRecycler;
+    private ImageView imgSlider;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        presenter=new HomePresenter(new NewsRepository());
+        presenter = new HomePresenter(new NewsRepository());
     }
 
 
     @Override
     public void showNews(List<News> news) {
 
+        newsRecycler.setAdapter(new NewsAdapter(news));
+
+
+    }
+
+    @Override
+    public void showBanners(List<Banner> banners) {
+        Picasso.get().load(banners.get(0).getUrl()).into(imgSlider);
     }
 
     @Override
     public void showError(String s) {
-
+        Toast.makeText(getViewContext(), s, Toast.LENGTH_LONG).show();
     }
 
     @Override
     public Context getViewContext() {
-        return null;
+        return getContext();
     }
-
 
 
     @Override
     public void onStart() {
         super.onStart();
+        setupViews();
         presenter.attachView(this);
     }
 
@@ -60,6 +75,10 @@ private HomeContract.Presenter presenter;
 
     @Override
     public void setupViews() {
+
+        newsRecycler = rootView.findViewById(R.id.rv_home_fragment);
+        imgSlider = rootView.findViewById(R.id.img_home_fragment_slider);
+        newsRecycler.setLayoutManager(new LinearLayoutManager(getViewContext(), RecyclerView.VERTICAL, false));
 
     }
 

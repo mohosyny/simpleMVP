@@ -4,22 +4,23 @@ import java.util.List;
 
 import diar.neo.simplemvp.base.BasePresenter;
 import diar.neo.simplemvp.base.BaseView;
+import diar.neo.simplemvp.data.Banner;
 import diar.neo.simplemvp.data.News;
 
-public interface HomeContract  {
+public interface HomeContract {
 
-     interface View extends BaseView{
+    interface View extends BaseView {
+        void showNews(List<News> news);
 
-         void showNews(List<News> news);
-         void showError(String s);
+        void showBanners(List<Banner> banners);
 
-     }
+        void showError(String s);
+    }
 
-     interface Presenter extends BasePresenter<View>{
+    interface Presenter extends BasePresenter<View> {
+        void getNewsList();
 
-         void getNews();
-
-     }
-
+        void getBanners();
+    }
 
 }

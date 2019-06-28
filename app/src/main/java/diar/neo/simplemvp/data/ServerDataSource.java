@@ -17,7 +17,7 @@ public class ServerDataSource implements NewsDataSource {
 
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("")
+                .baseUrl("http://192.168.1.102/simpleMVP/")
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -30,6 +30,11 @@ public class ServerDataSource implements NewsDataSource {
     @Override
     public Single<List<News>> getNews() {
         return mApiService.getNews();
+    }
+
+    @Override
+    public Single<List<Banner>> getBanners() {
+        return mApiService.getBanners();
     }
 
 }

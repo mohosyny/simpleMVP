@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="@dimen/cardview_default_radius"
+    app:cardElevation="@dimen/cardview_default_elevation"
+    app:layout_constraintTop_toTopOf="parent"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_newsRow_icon"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:layout_margin="8dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/txt_newsRow_sourc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="وینفون"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/img_newsRow_icon"
+            app:layout_constraintTop_toTopOf="parent"
+             />
+
+        <TextView
+            android:id="@+id/txt_newsRow_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@tools:sample/date/ddmmyy" />
+
+        <TextView
+            android:id="@+id/txt_newsRow_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textAlignment="viewEnd"
+            android:layout_marginStart="8dp"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/img_newsRow_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/img_newsRow_icon"
+            tools:text="@tools:sample/full_names" />
+
+
+        <View
+            android:id="@+id/view_newsRow_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"
+            app:layout_constraintTop_toBottomOf="@+id/img_newsRow_icon" />
+
+        <ImageView
+            android:id="@+id/img_newsRow_seen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_newsRow_divider"
+            app:srcCompat="@drawable/ic_remove_red_eye_black_24dp" />
+
+        <TextView
+            android:id="@+id/txt_newsrow_seencount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="4dp"
+            android:text="142"
+            app:layout_constraintBottom_toBottomOf="@+id/img_newsRow_seen"
+            app:layout_constraintStart_toEndOf="@+id/img_newsRow_seen"
+            app:layout_constraintTop_toTopOf="@+id/img_newsRow_seen" />
+
+        <ImageView
+            android:id="@+id/img_newsRow_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txt_newsrow_seencount"
+            app:layout_constraintTop_toBottomOf="@+id/view_newsRow_divider"
+            app:srcCompat="@drawable/ic_library_books_black_24dp" />
+
+        <ImageView
+            android:id="@+id/img_newsRow_bookmark"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_newsRow_icon"
+            app:srcCompat="@drawable/ic_bookmark_border_black_24dp" />
+
+
+        <TextView
+            android:id="@+id/txt_newsrow_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="تکنولوژی"
+            app:layout_constraintBottom_toBottomOf="@+id/img_newsRow_category"
+            app:layout_constraintStart_toEndOf="@+id/img_newsRow_category"
+            app:layout_constraintTop_toTopOf="@+id/img_newsRow_category" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
