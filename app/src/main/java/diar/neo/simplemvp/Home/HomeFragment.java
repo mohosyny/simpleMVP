@@ -39,7 +39,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.View {
     @Override
     public void showNews(List<News> news) {
 
-        newsRecycler.setAdapter(new NewsAdapter(news));
+        newsRecycler.setAdapter(new NewsAdapter(getViewContext(),news));
 
 
     }
