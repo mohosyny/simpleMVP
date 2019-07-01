@@ -1,4 +1,4 @@
-package diar.neo.simplemvp.Home;
+package diar.neo.simplemvp.Feature.Home;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -6,18 +6,15 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
-import java.util.Objects;
 
 import diar.neo.simplemvp.R;
 import diar.neo.simplemvp.base.BaseFragment;
-import diar.neo.simplemvp.base.BasePresenter;
 import diar.neo.simplemvp.data.Banner;
 import diar.neo.simplemvp.data.News;
 import diar.neo.simplemvp.data.NewsRepository;

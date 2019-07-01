@@ -1,4 +1,4 @@
-package diar.neo.simplemvp.Home;
+package diar.neo.simplemvp.Feature.Home;
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,7 +18,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import diar.neo.simplemvp.Const;
-import diar.neo.simplemvp.Detail.DetailActivity;
+import diar.neo.simplemvp.Feature.detail.DetailActivity;
 import diar.neo.simplemvp.R;
 import diar.neo.simplemvp.data.News;
 

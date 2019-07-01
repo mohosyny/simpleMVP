@@ -7,18 +7,20 @@
     tools:context=".MainActivity">
 
     <com.ss.bottomnavigation.BottomNavigation
+        android:layoutDirection="rtl"
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="@color/white"
-        android:elevation="4dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/white"
+        android:elevation="@dimen/standard_margin"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:mode="phone">
 
         <com.ss.bottomnavigation.TabItem
-            android:id="@+id/tab_navigation_news"
+            android:id="@+id/tab_navigation_home"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -28,16 +30,24 @@
             app:tab_text_color="@color/black" />
 
         <com.ss.bottomnavigation.TabItem
-            android:id="@+id/tab_navigation_home"
+            android:id="@+id/tab_navigation_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textDirection="rtl"
+            app:tab_icon="@drawable/ic_search_black_24dp"
+            app:tab_text="@string/search"
+            app:tab_text_color="@color/black" />
+
+        <com.ss.bottomnavigation.TabItem
+            android:id="@+id/tab_navigation_category"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textDirection="rtl"
             app:tab_icon="@drawable/ic_remove_red_eye_black_24dp"
-            app:tab_text="@string/bests"
-            app:tab_text_color="@color/black"
-
-            />
+            app:tab_text="@string/category"
+            app:tab_text_color="@color/black" />
 
         <com.ss.bottomnavigation.TabItem
             android:id="@+id/tab_navigation_saved"

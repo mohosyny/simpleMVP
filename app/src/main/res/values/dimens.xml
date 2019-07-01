@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="standard_margin">8dp</dimen>
+    <dimen name="small_margin">4dp</dimen>
+    <dimen name="large_margin">16dp</dimen>
+    <dimen name="image_slider_size">150dp</dimen>
+    <dimen name="rv_item_imgView_size">86dp</dimen>
+
+</resources>
