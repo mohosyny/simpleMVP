@@ -1,4 +1,4 @@
-package diar.neo.simplemvp.Feature.Home;
+package diar.neo.simplemvp.Feature.home;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,7 +17,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import diar.neo.simplemvp.Const;
+import diar.neo.simplemvp.Constants;
 import diar.neo.simplemvp.Feature.detail.DetailActivity;
 import diar.neo.simplemvp.R;
 import diar.neo.simplemvp.data.News;
@@ -58,10 +58,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, DetailActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra(Const.KEY_TITLE,mNewsList.get(position).getTitle());
-                intent.putExtra(Const.KEY_DATE,mNewsList.get(position).getDate());
-                intent.putExtra(Const.KEY_IMAGE,mNewsList.get(position).getImage_url());
-                intent.putExtra(Const.KEY_DESC,mNewsList.get(position).getDescription());
+                intent.putExtra(Constants.KEY_TITLE,mNewsList.get(position).getTitle());
+                intent.putExtra(Constants.KEY_DATE,mNewsList.get(position).getDate());
+                intent.putExtra(Constants.KEY_IMAGE,mNewsList.get(position).getImage_url());
+                intent.putExtra(Constants.KEY_DESC,mNewsList.get(position).getDescription());
                 mContext.startActivity(intent);
             }
         });
@@ -73,13 +73,13 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         return mNewsList.size();
     }
 
-    public class NewsViewHolder extends RecyclerView.ViewHolder {
+     class NewsViewHolder extends RecyclerView.ViewHolder {
         private ImageView img_icon;
         private TextView txtDate;
         private TextView txtTitle;
         private CardView cardParent;
 
-        public NewsViewHolder(@NonNull View itemView) {
+         NewsViewHolder(@NonNull View itemView) {
             super(itemView);
 
             img_icon = itemView.findViewById(R.id.img_newsRow_icon);

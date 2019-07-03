@@ -8,7 +8,7 @@ import android.os.Bundle;
 import com.ss.bottomnavigation.BottomNavigation;
 import com.ss.bottomnavigation.events.OnSelectedItemChangeListener;
 
-import diar.neo.simplemvp.Feature.Home.HomeFragment;
+import diar.neo.simplemvp.Feature.home.HomeFragment;
 import diar.neo.simplemvp.Feature.category.CategoryFragment;
 import diar.neo.simplemvp.Feature.saved.SavedFragment;
 import diar.neo.simplemvp.Feature.search.SearchFragment;
@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     @Override
     public void onBackPressed() {
 
@@ -77,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
 
             fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container, new SavedFragment());
+            fragmentTransaction.replace(R.id.fragment_container, new HomeFragment());
             fragmentTransaction.commit();
             mBottomNavigation.setSelectedItem(0);
 

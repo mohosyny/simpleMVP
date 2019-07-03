@@ -1,4 +1,4 @@
-package diar.neo.simplemvp.Feature.Home;
+package diar.neo.simplemvp.Feature.home;
 
 import java.util.List;
 

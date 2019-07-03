@@ -2,7 +2,7 @@ package diar.neo.simplemvp.data;
 
 import java.util.List;
 
-import diar.neo.simplemvp.base.BaseView;
+import diar.neo.simplemvp.Constants;
 import io.reactivex.Single;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -17,13 +17,12 @@ public class ServerDataSource implements NewsDataSource {
 
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.102/simpleMVP/")
+                .baseUrl(Constants.BASE_URL)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-
-        mApiService=retrofit.create(ApiService.class);
+               mApiService=retrofit.create(ApiService.class);
 
     }
 

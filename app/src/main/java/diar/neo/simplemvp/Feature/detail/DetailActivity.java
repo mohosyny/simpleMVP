@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.squareup.picasso.Picasso;
 
-import diar.neo.simplemvp.Const;
+import diar.neo.simplemvp.Constants;
 import diar.neo.simplemvp.R;
 
 public class DetailActivity extends AppCompatActivity {
@@ -33,10 +33,10 @@ public class DetailActivity extends AppCompatActivity {
     private void getExtras() {
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            image_url = bundle.getString(Const.KEY_IMAGE);
-            date = bundle.getString(Const.KEY_DATE);
-            title = bundle.getString(Const.KEY_TITLE);
-            description = bundle.getString(Const.KEY_DESC);
+            image_url = bundle.getString(Constants.KEY_IMAGE);
+            date = bundle.getString(Constants.KEY_DATE);
+            title = bundle.getString(Constants.KEY_TITLE);
+            description = bundle.getString(Constants.KEY_DESC);
         }
 
     }

@@ -1,4 +1,4 @@
-package diar.neo.simplemvp.Feature.Home;
+package diar.neo.simplemvp.Feature.home;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -37,13 +37,14 @@ public class HomeFragment extends BaseFragment implements HomeContract.View {
     public void showNews(List<News> news) {
 
         newsRecycler.setAdapter(new NewsAdapter(getViewContext(),news));
-
-
     }
 
     @Override
     public void showBanners(List<Banner> banners) {
-        Picasso.get().load(banners.get(0).getUrl()).into(imgSlider);
+        Picasso.get().
+                load(banners.get(0).getUrl())
+                .placeholder(R.drawable.ic_launcher_background)
+                .into(imgSlider);
     }
 
     @Override
@@ -60,7 +61,6 @@ public class HomeFragment extends BaseFragment implements HomeContract.View {
     @Override
     public void onStart() {
         super.onStart();
-        setupViews();
         presenter.attachView(this);
     }
 
