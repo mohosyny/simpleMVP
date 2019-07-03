@@ -19,4 +19,9 @@ public class NewsRepository implements NewsDataSource {
     public Single<List<Banner>> getBanners() {
         return mServerDataSource.getBanners();
     }
+
+    @Override
+    public Single<List<Category>> getCats() {
+        return mServerDataSource.getCats();
+    }
 }

@@ -1,4 +1,4 @@
-package diar.neo.simplemvp.Feature.saved;
+package diar.neo.simplemvp.feature.saved;
 
 import diar.neo.simplemvp.base.BasePresenter;
 import diar.neo.simplemvp.base.BaseView;

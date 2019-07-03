@@ -1,4 +1,4 @@
-package diar.neo.simplemvp.Feature.detail;
+package diar.neo.simplemvp.feature.detail;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;

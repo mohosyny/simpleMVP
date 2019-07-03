@@ -8,10 +8,10 @@ import android.os.Bundle;
 import com.ss.bottomnavigation.BottomNavigation;
 import com.ss.bottomnavigation.events.OnSelectedItemChangeListener;
 
-import diar.neo.simplemvp.Feature.home.HomeFragment;
-import diar.neo.simplemvp.Feature.category.CategoryFragment;
-import diar.neo.simplemvp.Feature.saved.SavedFragment;
-import diar.neo.simplemvp.Feature.search.SearchFragment;
+import diar.neo.simplemvp.feature.home.HomeFragment;
+import diar.neo.simplemvp.feature.category.CategoryFragment;
+import diar.neo.simplemvp.feature.saved.SavedFragment;
+import diar.neo.simplemvp.feature.search.SearchFragment;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigation mBottomNavigation;

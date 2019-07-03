@@ -1,4 +1,4 @@
-package diar.neo.simplemvp.Feature.home;
+package diar.neo.simplemvp.feature.home;
 
 import android.content.Context;
 import android.os.Bundle;

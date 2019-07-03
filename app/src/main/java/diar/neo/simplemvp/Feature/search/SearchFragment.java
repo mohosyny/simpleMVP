@@ -1,4 +1,4 @@
-package diar.neo.simplemvp.Feature.search;
+package diar.neo.simplemvp.feature.search;
 
 import android.content.Context;
 

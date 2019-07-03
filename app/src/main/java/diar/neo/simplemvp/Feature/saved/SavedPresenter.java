@@ -1,6 +1,6 @@
-package diar.neo.simplemvp.Feature.saved;
+package diar.neo.simplemvp.feature.saved;
 
-import diar.neo.simplemvp.Feature.saved.SavedContract.View;
+import diar.neo.simplemvp.feature.saved.SavedContract.View;
 
 public class SavedPresenter implements SavedContract.Presenter {
     @Override

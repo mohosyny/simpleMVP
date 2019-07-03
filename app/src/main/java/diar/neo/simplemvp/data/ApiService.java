@@ -13,6 +13,6 @@ public interface ApiService {
     @GET("banner.php")
     Single<List<Banner>> getBanners();
 
-    @GET("banner.php")
+    @GET("cat.php")
     Single<List<Category>> getCategory();
 }

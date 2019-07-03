@@ -15,4 +15,9 @@ public class LocalDataSource implements NewsDataSource {
         return null;
     }
 
+    @Override
+    public Single<List<Category>> getCats() {
+        return null;
+    }
+
 }

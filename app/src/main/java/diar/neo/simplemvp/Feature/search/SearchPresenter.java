@@ -1,6 +1,6 @@
-package diar.neo.simplemvp.Feature.search;
+package diar.neo.simplemvp.feature.search;
 
-import diar.neo.simplemvp.Feature.search.SearchContract.View;
+import diar.neo.simplemvp.feature.search.SearchContract.View;
 
 public class SearchPresenter implements SearchContract.Presenter {
     @Override

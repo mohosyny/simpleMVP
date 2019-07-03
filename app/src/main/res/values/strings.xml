@@ -3,7 +3,7 @@
     <string name="news">اخبار</string>
     <string name="lastNews">آخرین اخبار</string>
     <string name="All">همه</string>
-    <string name="category">دسته بندی</string>
+    <string name="category">دسته ها</string>
     <string name="saved">نشان شده</string>
     <string name="search">جستجو</string>
 </resources>

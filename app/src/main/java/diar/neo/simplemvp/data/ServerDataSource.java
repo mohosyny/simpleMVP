@@ -36,4 +36,9 @@ public class ServerDataSource implements NewsDataSource {
         return mApiService.getBanners();
     }
 
+    @Override
+    public Single<List<Category>> getCats() {
+        return mApiService.getCategory();
+    }
+
 }

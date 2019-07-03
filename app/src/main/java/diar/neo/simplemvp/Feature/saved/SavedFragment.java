@@ -1,4 +1,4 @@
-package diar.neo.simplemvp.Feature.saved;
+package diar.neo.simplemvp.feature.saved;
 
 import android.content.Context;
 
