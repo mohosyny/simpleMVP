@@ -1,11 +1,15 @@
-package diar.neo.simplemvp.data;
+package diar.neo.simplemvp.data.model;
+
+import com.google.gson.annotations.SerializedName;
 
 public class News {
 
     private String id;
     private String title;
     private String description;
+    @SerializedName("image")
     private String image_url;
+    @SerializedName("video")
     private String videoUrl;
     private String date;
 

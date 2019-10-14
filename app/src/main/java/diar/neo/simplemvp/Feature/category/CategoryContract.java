@@ -4,7 +4,7 @@ import java.util.List;
 
 import diar.neo.simplemvp.base.BasePresenter;
 import diar.neo.simplemvp.base.BaseView;
-import diar.neo.simplemvp.data.Category;
+import diar.neo.simplemvp.data.model.Category;
 
 public interface CategoryContract {
 

@@ -20,7 +20,7 @@ import java.util.List;
 import diar.neo.simplemvp.Constants;
 import diar.neo.simplemvp.feature.detail.DetailActivity;
 import diar.neo.simplemvp.R;
-import diar.neo.simplemvp.data.News;
+import diar.neo.simplemvp.data.model.News;
 
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {

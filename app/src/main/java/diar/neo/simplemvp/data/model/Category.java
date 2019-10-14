@@ -1,7 +1,10 @@
-package diar.neo.simplemvp.data;
+package diar.neo.simplemvp.data.model;
+
+import com.google.gson.annotations.SerializedName;
 
 public class Category {
     private String id;
+    @SerializedName("title")
     private String cat_name;
 
     public String getId() {

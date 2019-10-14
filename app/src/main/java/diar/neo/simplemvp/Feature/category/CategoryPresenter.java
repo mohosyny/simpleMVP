@@ -2,10 +2,9 @@ package diar.neo.simplemvp.feature.category;
 
 import java.util.List;
 
-import diar.neo.simplemvp.data.Category;
+import diar.neo.simplemvp.data.model.Category;
 import diar.neo.simplemvp.data.NewsDataSource;
 import diar.neo.simplemvp.feature.category.CategoryContract.View;
-import io.reactivex.Scheduler;
 import io.reactivex.SingleObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;

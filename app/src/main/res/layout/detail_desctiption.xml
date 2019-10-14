@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/standard_margin">
+    android:layout_margin="@dimen/small_margin">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -43,7 +43,7 @@
                 android:id="@+id/txt_detail_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
+                android:layout_margin="@dimen/small_margin"
                 android:padding="@dimen/small_margin"
                 android:textAlignment="viewEnd"
                 app:layout_constraintEnd_toEndOf="parent"

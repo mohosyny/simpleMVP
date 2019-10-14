@@ -6,6 +6,7 @@ public class Constants {
     public static final String KEY_IMAGE="image";
     public static final String KEY_DATE="date";
     public static final String KEY_DESC="description";
-    public static final String BASE_URL="http://192.168.1.102/simpleMVP/";
+    public static final String BASE_URL="http://192.168.1.101/mvp/"; //my ip for real device
+  //  public static final String BASE_URL="http://10.0.2.2/mvp/";        // for android studio emulator
 
 }

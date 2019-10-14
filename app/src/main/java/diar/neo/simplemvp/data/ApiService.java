@@ -2,6 +2,9 @@ package diar.neo.simplemvp.data;
 
 import java.util.List;
 
+import diar.neo.simplemvp.data.model.Banner;
+import diar.neo.simplemvp.data.model.Category;
+import diar.neo.simplemvp.data.model.News;
 import io.reactivex.Single;
 import retrofit2.http.GET;
 

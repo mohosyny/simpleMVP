@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import diar.neo.simplemvp.R;
-import diar.neo.simplemvp.data.Category;
+import diar.neo.simplemvp.data.model.Category;
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategotyViewHolder> {
     private Context mContext;
     private List<Category> mCategories;

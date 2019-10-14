@@ -1,8 +1,10 @@
 package diar.neo.simplemvp.data;
 
 import java.util.List;
-import java.util.SimpleTimeZone;
 
+import diar.neo.simplemvp.data.model.Banner;
+import diar.neo.simplemvp.data.model.Category;
+import diar.neo.simplemvp.data.model.News;
 import io.reactivex.Single;
 
 public interface NewsDataSource  {

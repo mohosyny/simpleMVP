@@ -1,8 +1,6 @@
 package diar.neo.simplemvp.feature.category;
 
 import android.content.Context;
-import android.os.Build.VERSION;
-import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -14,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 import diar.neo.simplemvp.R;
 import diar.neo.simplemvp.base.BaseFragment;
-import diar.neo.simplemvp.data.Category;
+import diar.neo.simplemvp.data.model.Category;
 import diar.neo.simplemvp.data.NewsRepository;
 
 public class CategoryFragment extends BaseFragment implements CategoryContract.View {

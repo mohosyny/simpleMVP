@@ -4,8 +4,8 @@ import java.util.List;
 
 import diar.neo.simplemvp.base.BasePresenter;
 import diar.neo.simplemvp.base.BaseView;
-import diar.neo.simplemvp.data.Banner;
-import diar.neo.simplemvp.data.News;
+import diar.neo.simplemvp.data.model.Banner;
+import diar.neo.simplemvp.data.model.News;
 
 public interface HomeContract {
 

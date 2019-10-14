@@ -2,8 +2,8 @@ package diar.neo.simplemvp.feature.home;
 
 import java.util.List;
 
-import diar.neo.simplemvp.data.Banner;
-import diar.neo.simplemvp.data.News;
+import diar.neo.simplemvp.data.model.Banner;
+import diar.neo.simplemvp.data.model.News;
 import diar.neo.simplemvp.data.NewsDataSource;
 import io.reactivex.SingleObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;

@@ -1,4 +1,4 @@
-package diar.neo.simplemvp.data;
+package diar.neo.simplemvp.data.model;
 
 public class Banner {
     private int id;

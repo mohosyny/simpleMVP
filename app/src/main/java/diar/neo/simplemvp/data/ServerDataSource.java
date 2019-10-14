@@ -3,6 +3,9 @@ package diar.neo.simplemvp.data;
 import java.util.List;
 
 import diar.neo.simplemvp.Constants;
+import diar.neo.simplemvp.data.model.Banner;
+import diar.neo.simplemvp.data.model.Category;
+import diar.neo.simplemvp.data.model.News;
 import io.reactivex.Single;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
