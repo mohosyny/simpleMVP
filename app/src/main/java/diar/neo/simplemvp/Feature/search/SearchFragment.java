@@ -4,9 +4,11 @@ import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -28,6 +30,7 @@ public class SearchFragment extends BaseFragment implements SearchContract.View 
     private List<News> newsList;
     private NewsAdapter newsAdapter;
     private EditText edtSearch;
+    private TextView txtNotFound;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,18 +48,17 @@ public class SearchFragment extends BaseFragment implements SearchContract.View 
     @Override
     public void onStop() {
         super.onStop();
-        closeKeyboard();
         presenter.detachView();
     }
 
     @Override
     public void setupViews() {
-
-         edtSearch = rootView.findViewById(R.id.edt_search);
+        txtNotFound = rootView.findViewById(R.id.txt_not_found);
+        edtSearch = rootView.findViewById(R.id.edt_search);
         recyclerView = rootView.findViewById(R.id.search_fragment_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(getViewContext(), LinearLayoutManager.VERTICAL, false));
-       // edtSearch.requestFocus();
-      //  showKeyboard();
+        // edtSearch.requestFocus();
+        //  showKeyboard();
 
         edtSearch.addTextChangedListener(new TextWatcher() {
             @Override
@@ -91,11 +93,17 @@ public class SearchFragment extends BaseFragment implements SearchContract.View 
     public void showSearchedNews(List<News> news) {
         newsList.clear();
         newsList = news;
-        newsAdapter = new NewsAdapter(getViewContext(), newsList);
-        recyclerView.setAdapter(newsAdapter);
-        newsAdapter.notifyDataSetChanged();
+        if (newsList.isEmpty()){
+            txtNotFound.setVisibility(View.VISIBLE);
+        }else {
+            txtNotFound.setVisibility(View.GONE);
+            newsAdapter = new NewsAdapter(getViewContext(), newsList);
+            recyclerView.setAdapter(newsAdapter);
+            newsAdapter.notifyDataSetChanged();
+        }
         edtSearch.clearFocus();
-      //  closeKeyboard();
+
+        //  closeKeyboard();
     }
 
     @Override
@@ -106,7 +114,7 @@ public class SearchFragment extends BaseFragment implements SearchContract.View 
     @Override
     public void onPause() {
         super.onPause();
-      //  closeKeyboard();
+        //  closeKeyboard();
     }
 
     private void showKeyboard() {
@@ -114,7 +122,7 @@ public class SearchFragment extends BaseFragment implements SearchContract.View 
         inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
     }
 
-    private void closeKeyboard() {
+   private void closeKeyboard() {
         InputMethodManager inputMethodManager = (InputMethodManager) getViewContext().getSystemService(Context.INPUT_METHOD_SERVICE);
         inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
     }

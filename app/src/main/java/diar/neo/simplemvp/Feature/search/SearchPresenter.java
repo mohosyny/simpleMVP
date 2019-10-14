@@ -1,5 +1,6 @@
 package diar.neo.simplemvp.feature.search;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import diar.neo.simplemvp.data.NewsDataSource;
@@ -14,9 +15,11 @@ public class SearchPresenter implements SearchContract.Presenter {
     private SearchContract.View view;
     private NewsDataSource newsDataSource;
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
+    private List<News> emptyList;
 
     SearchPresenter(NewsDataSource newsDataSource) {
         this.newsDataSource = newsDataSource;
+        emptyList=new ArrayList<>();
     }
 
     @Override
@@ -56,6 +59,9 @@ public class SearchPresenter implements SearchContract.Presenter {
                         }
                     });
 
+        }else {
+
+            view.showSearchedNews(emptyList);
         }
 
 

@@ -6,4 +6,5 @@
     <string name="category">دسته ها</string>
     <string name="saved">نشان شده</string>
     <string name="search">جستجو</string>
+    <string name="not_Found">چیزی پیدا نشد :(</string>
 </resources>
