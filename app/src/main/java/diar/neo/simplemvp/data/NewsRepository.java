@@ -27,4 +27,11 @@ public class NewsRepository implements NewsDataSource {
     public Single<List<Category>> getCats() {
         return mServerDataSource.getCats();
     }
+
+    @Override
+    public Single<List<News>> getSearchedNews(CharSequence charSequence) {
+        return mServerDataSource.getSearchedNews(charSequence);
+    }
+
+
 }

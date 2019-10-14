@@ -23,4 +23,9 @@ public class LocalDataSource implements NewsDataSource {
         return null;
     }
 
+    @Override
+    public Single<List<News>> getSearchedNews(CharSequence charSequence) {
+        return null;
+    }
+
 }

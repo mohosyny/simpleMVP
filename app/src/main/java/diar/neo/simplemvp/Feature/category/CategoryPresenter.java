@@ -24,7 +24,7 @@ public class CategoryPresenter implements CategoryContract.Presenter {
     @Override
     public void attachView(View view) {
         mView = view;
-        getCategoriy();
+        getCategory();
     }
 
     @Override
@@ -36,7 +36,7 @@ public class CategoryPresenter implements CategoryContract.Presenter {
     }
 
     @Override
-    public void getCategoriy() {
+    public void getCategory() {
 
         mNewsDataSource.getCats().subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new SingleObserver<List<Category>>() {

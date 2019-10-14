@@ -44,4 +44,11 @@ public class ServerDataSource implements NewsDataSource {
         return mApiService.getCategory();
     }
 
+    @Override
+    public Single<List<News>> getSearchedNews(CharSequence charSequence) {
+        return mApiService.getSearchedNews(charSequence.toString());
+    }
+
+
+
 }

@@ -7,9 +7,13 @@ import diar.neo.simplemvp.data.model.Category;
 import diar.neo.simplemvp.data.model.News;
 import io.reactivex.Single;
 
-public interface NewsDataSource  {
+public interface NewsDataSource {
 
     Single<List<News>> getNews();
+
     Single<List<Banner>> getBanners();
-    Single<List<Category>>  getCats();
+
+    Single<List<Category>> getCats();
+
+    Single<List<News>> getSearchedNews(CharSequence charSequence);
 }
