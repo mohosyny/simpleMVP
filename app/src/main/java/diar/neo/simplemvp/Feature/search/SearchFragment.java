@@ -7,7 +7,6 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,7 +21,7 @@ import diar.neo.simplemvp.R;
 import diar.neo.simplemvp.base.BaseFragment;
 import diar.neo.simplemvp.data.NewsRepository;
 import diar.neo.simplemvp.data.model.News;
-import diar.neo.simplemvp.feature.home.NewsAdapter;
+import diar.neo.simplemvp.data.NewsAdapter;
 
 public class SearchFragment extends BaseFragment implements SearchContract.View {
     private SearchContract.Presenter presenter;

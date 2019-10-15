@@ -15,6 +15,7 @@ import java.util.List;
 
 import diar.neo.simplemvp.R;
 import diar.neo.simplemvp.base.BaseFragment;
+import diar.neo.simplemvp.data.NewsAdapter;
 import diar.neo.simplemvp.data.model.Banner;
 import diar.neo.simplemvp.data.model.News;
 import diar.neo.simplemvp.data.NewsRepository;
