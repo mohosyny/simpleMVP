@@ -12,4 +12,9 @@ public class SavedPresenter implements SavedContract.Presenter {
     public void detachView() {
 
     }
+
+    @Override
+    public void getNews() {
+
+    }
 }

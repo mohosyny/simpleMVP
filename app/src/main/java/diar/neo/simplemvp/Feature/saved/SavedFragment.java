@@ -20,4 +20,9 @@ public class SavedFragment extends BaseFragment implements SavedContract.View {
     public Context getViewContext() {
         return getContext();
     }
+
+    @Override
+    public void showNews() {
+
+    }
 }

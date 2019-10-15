@@ -6,8 +6,12 @@ import diar.neo.simplemvp.base.BaseView;
 public interface SavedContract {
 
 
-     interface View extends BaseView{}
+     interface View extends BaseView{
+          void showNews();
+     }
 
-     interface Presenter extends BasePresenter<View>{}
+     interface Presenter extends BasePresenter<View>{
+          void getNews();
+     }
 
 }
