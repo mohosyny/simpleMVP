@@ -2,7 +2,6 @@ package diar.neo.simplemvp.data;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,6 +19,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import diar.neo.simplemvp.Constants;
+import diar.neo.simplemvp.data.local.MyDatabase;
 import diar.neo.simplemvp.feature.detail.DetailActivity;
 import diar.neo.simplemvp.R;
 import diar.neo.simplemvp.data.model.News;

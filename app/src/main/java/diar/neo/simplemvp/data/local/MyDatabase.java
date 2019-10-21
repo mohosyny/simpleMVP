@@ -1,4 +1,4 @@
-package diar.neo.simplemvp.data;
+package diar.neo.simplemvp.data.local;
 
 import android.content.ContentValues;
 import android.content.Context;

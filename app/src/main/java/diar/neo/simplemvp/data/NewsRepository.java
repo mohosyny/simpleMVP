@@ -2,9 +2,11 @@ package diar.neo.simplemvp.data;
 
 import java.util.List;
 
+import diar.neo.simplemvp.data.local.LocalDataSource;
 import diar.neo.simplemvp.data.model.Banner;
 import diar.neo.simplemvp.data.model.Category;
 import diar.neo.simplemvp.data.model.News;
+import diar.neo.simplemvp.data.server.ServerDataSource;
 import io.reactivex.Single;
 
 public class NewsRepository implements NewsDataSource {

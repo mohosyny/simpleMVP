@@ -1,7 +1,8 @@
-package diar.neo.simplemvp.data;
+package diar.neo.simplemvp.data.local;
 
 import java.util.List;
 
+import diar.neo.simplemvp.data.NewsDataSource;
 import diar.neo.simplemvp.data.model.Banner;
 import diar.neo.simplemvp.data.model.Category;
 import diar.neo.simplemvp.data.model.News;

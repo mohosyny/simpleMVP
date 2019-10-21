@@ -1,11 +1,13 @@
-package diar.neo.simplemvp.data;
+package diar.neo.simplemvp.data.server;
 
 import java.util.List;
 
 import diar.neo.simplemvp.Constants;
+import diar.neo.simplemvp.data.NewsDataSource;
 import diar.neo.simplemvp.data.model.Banner;
 import diar.neo.simplemvp.data.model.Category;
 import diar.neo.simplemvp.data.model.News;
+import diar.neo.simplemvp.data.server.ApiService;
 import io.reactivex.Single;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;

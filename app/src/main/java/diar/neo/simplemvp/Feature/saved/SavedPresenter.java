@@ -6,7 +6,7 @@ import android.database.Cursor;
 import java.util.ArrayList;
 import java.util.List;
 
-import diar.neo.simplemvp.data.MyDatabase;
+import diar.neo.simplemvp.data.local.MyDatabase;
 import diar.neo.simplemvp.data.NewsDataSource;
 import diar.neo.simplemvp.data.model.News;
 import diar.neo.simplemvp.feature.saved.SavedContract.View;

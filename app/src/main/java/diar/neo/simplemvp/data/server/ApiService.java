@@ -1,4 +1,4 @@
-package diar.neo.simplemvp.data;
+package diar.neo.simplemvp.data.server;
 
 import java.util.List;
 
