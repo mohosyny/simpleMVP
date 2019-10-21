@@ -8,13 +8,13 @@ import androidx.room.Query;
 import java.util.List;
 
 @Dao
-public interface UserDAO {
+public interface NewsDAO {
 
-    @Query("SELECT * FROM news")
-    List<UserRepo> getAllNews();
+    @Query("SELECT * FROM NewsRepo")
+    List<NewsRepo> getAllNews();
 
 
     @Insert
-    void insertAll(UserRepo... user);
+    void insertAll(NewsRepo... user);
 
 }

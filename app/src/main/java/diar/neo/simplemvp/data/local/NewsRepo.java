@@ -5,7 +5,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity (tableName = "news")
-public class UserRepo {
+public class NewsRepo {
     @PrimaryKey(autoGenerate = true)
     private String id;
 
@@ -16,7 +16,7 @@ public class UserRepo {
 
 
 
-    public UserRepo(String title,String description,String image_url,String date){
+    public NewsRepo(String title, String description, String image_url, String date){
 
         this.title=title;
         this.description=description;
