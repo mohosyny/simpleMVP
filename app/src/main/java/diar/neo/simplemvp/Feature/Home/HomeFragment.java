@@ -1,11 +1,13 @@
 package diar.neo.simplemvp.feature.home;
 
 import android.content.Context;
+import android.graphics.Path;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,6 +15,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import diar.neo.simplemvp.MainActivity;
 import diar.neo.simplemvp.R;
 import diar.neo.simplemvp.base.BaseFragment;
 import diar.neo.simplemvp.data.NewsAdapter;

@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -20,6 +21,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import diar.neo.simplemvp.Constants;
+import diar.neo.simplemvp.MainActivity;
 import diar.neo.simplemvp.data.local.NewsDataBase;
 import diar.neo.simplemvp.feature.detail.DetailActivity;
 import diar.neo.simplemvp.R;
@@ -59,6 +61,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         holder.cardParent.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 Intent intent = new Intent(mContext, DetailActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra(Constants.KEY_TITLE, mNewsList.get(position).getTitle());
