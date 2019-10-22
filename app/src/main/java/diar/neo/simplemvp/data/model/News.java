@@ -1,10 +1,15 @@
 package diar.neo.simplemvp.data.model;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.SerializedName;
 
-public class News {
 
-    private String id;
+@Entity (tableName = "news")
+public class News {
+    @PrimaryKey(autoGenerate = true)
+    private int id;
     private String title;
     private String description;
     @SerializedName("image")
@@ -13,11 +18,11 @@ public class News {
     private String videoUrl;
     private String date;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

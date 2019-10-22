@@ -7,14 +7,19 @@ import androidx.room.Query;
 
 import java.util.List;
 
+import diar.neo.simplemvp.data.model.News;
+
 @Dao
 public interface NewsDAO {
 
-    @Query("SELECT * FROM NewsRepo")
-    List<NewsRepo> getAllNews();
+    @Query("SELECT * FROM news")
+    List<News> getAllNews();
 
 
-    @Insert
-    void insertAll(NewsRepo... user);
+    @Query("SELECT * FROM news WHERE id=(:id)")
+            boolean isBookmarked(int id);
+
+  @Insert
+    void insertNews(News news);
 
 }

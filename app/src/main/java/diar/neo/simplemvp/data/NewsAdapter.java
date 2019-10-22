@@ -2,6 +2,7 @@ package diar.neo.simplemvp.data;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -19,7 +20,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import diar.neo.simplemvp.Constants;
-import diar.neo.simplemvp.data.local.MyDatabase;
+import diar.neo.simplemvp.data.local.NewsDataBase;
 import diar.neo.simplemvp.feature.detail.DetailActivity;
 import diar.neo.simplemvp.R;
 import diar.neo.simplemvp.data.model.News;
@@ -29,13 +30,11 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
 
     private List<News> mNewsList;
     private Context mContext;
-    private MyDatabase myDatabase;
 
     public NewsAdapter(Context context, List<News> news) {
 
         mNewsList = news;
         mContext = context;
-        myDatabase=new MyDatabase(context);
     }
 
     @NonNull
@@ -62,22 +61,25 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, DetailActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra(Constants.KEY_TITLE,mNewsList.get(position).getTitle());
-                intent.putExtra(Constants.KEY_DATE,mNewsList.get(position).getDate());
-                intent.putExtra(Constants.KEY_IMAGE,mNewsList.get(position).getImage_url());
-                intent.putExtra(Constants.KEY_DESC,mNewsList.get(position).getDescription());
+                intent.putExtra(Constants.KEY_TITLE, mNewsList.get(position).getTitle());
+                intent.putExtra(Constants.KEY_DATE, mNewsList.get(position).getDate());
+                intent.putExtra(Constants.KEY_IMAGE, mNewsList.get(position).getImage_url());
+                intent.putExtra(Constants.KEY_DESC, mNewsList.get(position).getDescription());
                 mContext.startActivity(intent);
             }
         });
         holder.imgBookmark.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-              long id=  myDatabase.addInfo(mNewsList.get(position).getTitle()
-                        ,mNewsList.get(position).getDescription() // not necessary
-                        ,mNewsList.get(position).getImage_url()
-                        ,mNewsList.get(position).getDate());
 
-                Toast.makeText(mContext, ""+id, Toast.LENGTH_SHORT).show();
+                boolean isBookmarked = NewsDataBase.getInstance(mContext).getNewsDAO().isBookmarked(mNewsList.get(position).getId());
+                if (isBookmarked) {
+                    Toast.makeText(mContext, "در لبست علاقه مندی ها وجود دارد", Toast.LENGTH_SHORT).show();
+                } else {
+                    NewsDataBase.getInstance(mContext).getNewsDAO().insertNews(mNewsList.get(position));
+                    Toast.makeText(mContext, " لبست علاقه مندی ها", Toast.LENGTH_SHORT).show();
+
+                }
             }
         });
 
@@ -88,21 +90,21 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         return mNewsList.size();
     }
 
-     class NewsViewHolder extends RecyclerView.ViewHolder {
+    class NewsViewHolder extends RecyclerView.ViewHolder {
         private ImageView img_icon;
         private TextView txtDate;
         private TextView txtTitle;
         private CardView cardParent;
         private ImageView imgBookmark;
 
-         NewsViewHolder(@NonNull View itemView) {
+        NewsViewHolder(@NonNull View itemView) {
             super(itemView);
 
             img_icon = itemView.findViewById(R.id.img_newsRow_icon);
             txtDate = itemView.findViewById(R.id.txt_newsRow_date);
             txtTitle = itemView.findViewById(R.id.txt_newsRow_title);
             cardParent = itemView.findViewById(R.id.cardview_item_homefragment);
-            imgBookmark=itemView.findViewById(R.id.img_newsRow_bookmark);
+            imgBookmark = itemView.findViewById(R.id.img_newsRow_bookmark);
 
         }
     }

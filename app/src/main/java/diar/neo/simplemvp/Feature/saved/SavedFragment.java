@@ -34,7 +34,7 @@ public class SavedFragment extends BaseFragment implements SavedContract.View {
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         ( (AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         presenter = new SavedPresenter(new NewsRepository());
-        recyclerView = rootView.findViewById(R.id.fragment_saved_recycler);
+        recyclerView = rootView.findViewById(R.id.rv_saved_fragment);
         recyclerView.setLayoutManager(new LinearLayoutManager(getViewContext(), LinearLayoutManager.VERTICAL, false));
     }
 

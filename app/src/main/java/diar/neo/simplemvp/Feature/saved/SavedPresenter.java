@@ -1,13 +1,12 @@
 package diar.neo.simplemvp.feature.saved;
 
 import android.content.Context;
-import android.database.Cursor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import diar.neo.simplemvp.data.local.MyDatabase;
 import diar.neo.simplemvp.data.NewsDataSource;
+import diar.neo.simplemvp.data.local.NewsDataBase;
 import diar.neo.simplemvp.data.model.News;
 import diar.neo.simplemvp.feature.saved.SavedContract.View;
 
@@ -38,7 +37,7 @@ public class SavedPresenter implements SavedContract.Presenter {
 
     @Override
     public void getSavedNews(Context context) {
-        MyDatabase database = new MyDatabase(context);
+      /*  MyDatabase database = new MyDatabase(context);
         Cursor cursor = database.getInfos();
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
 
@@ -48,16 +47,18 @@ public class SavedPresenter implements SavedContract.Presenter {
             String img = cursor.getString(3);
             String date = cursor.getString(4);
 
-            News news = new News();
             news.setTitle(title);
             news.setDate(date);
             news.setImage_url(img);
-            news.setDescription(description);
+            news.setDescription(description);*/
 
-            newsList.add(news);
-            view.showSavedNews(newsList);
+
+
+        List<News>  news = NewsDataBase.getInstance(context).getNewsDAO().getAllNews();
+           // newsList.add(news);
+            view.showSavedNews(news);
 
         }
 
     }
-}
+
