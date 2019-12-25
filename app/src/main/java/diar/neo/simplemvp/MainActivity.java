@@ -2,20 +2,17 @@ package diar.neo.simplemvp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
-import com.ss.bottomnavigation.BottomNavigation;
-import com.ss.bottomnavigation.events.OnSelectedItemChangeListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import diar.neo.simplemvp.feature.home.HomeFragment;
-import diar.neo.simplemvp.feature.category.CategoryFragment;
-import diar.neo.simplemvp.feature.saved.SavedFragment;
-import diar.neo.simplemvp.feature.search.SearchFragment;
 
 public class MainActivity extends AppCompatActivity {
-    BottomNavigation mBottomNavigation;
-    FragmentTransaction fragmentTransaction;
+   BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,63 +23,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupViews() {
+            bottomNavigationView =findViewById(R.id.bttm_nav);
+            NavHostFragment navHostFragment = (NavHostFragment)getSupportFragmentManager()
+                    .findFragmentById(R.id.navHost_fragment);
+            NavigationUI.setupWithNavController(bottomNavigationView,
+                    navHostFragment.getNavController());
 
-        mBottomNavigation = findViewById(R.id.bottom_navigation);
-
-        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, new HomeFragment());
-        fragmentTransaction.commit();
-
-
-        mBottomNavigation.setOnSelectedItemChangeListener(new OnSelectedItemChangeListener() {
-            @Override
-            public void onSelectedItemChanged(int i) {
-                switch (i) {
-
-                    case R.id.tab_navigation_home:
-                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.fragment_container, new HomeFragment());
-                        fragmentTransaction.commit();
-                        break;
-                    case R.id.tab_navigation_search:
-                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.fragment_container, new SearchFragment());
-                        fragmentTransaction.commit();
-                        break;
-                    case R.id.tab_navigation_category:
-                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.fragment_container, new CategoryFragment());
-                        fragmentTransaction.commit();
-                        break;
-                    case R.id.tab_navigation_saved:
-                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.fragment_container, new SavedFragment());
-                        fragmentTransaction.commit();
-                        break;
-
-                }
-            }
-        });
-
-
-    }
-
-    @Override
-    public void onBackPressed() {
-
-        if (mBottomNavigation.getSelectedItem() == 0) {
-            super.onBackPressed();
-
-        } else {
-
-            fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container, new HomeFragment());
-            fragmentTransaction.commit();
-            mBottomNavigation.setSelectedItem(0);
-
-        }
-
-    }
+//
 }
 
 

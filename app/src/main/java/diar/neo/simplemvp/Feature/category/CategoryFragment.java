@@ -2,8 +2,12 @@ package diar.neo.simplemvp.feature.category;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -48,10 +52,7 @@ public class CategoryFragment extends BaseFragment implements CategoryContract.V
         mRecyclerView=rootView.findViewById(R.id.rv_category_fragment);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getViewContext(),RecyclerView.VERTICAL,false)); }
 
-    @Override
-    public int getLayout() {
-        return R.layout.fragment_category;
-    }
+
 
     @Override
     public Context getViewContext() {
@@ -68,4 +69,10 @@ public class CategoryFragment extends BaseFragment implements CategoryContract.V
     public void showError(String s) {
         Toast.makeText(getViewContext(), s, Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public int getLayout() {
+        return R.layout.fragment_category;
+    }
+
 }

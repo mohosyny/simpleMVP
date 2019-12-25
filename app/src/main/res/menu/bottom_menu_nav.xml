@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_library_books_black_24dp"
+        android:orderInCategory="1"
+        android:title="اخبار"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/searchFragment"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:orderInCategory="2"
+        android:title="جستجو"
+        app:showAsAction="always" />
+
+
+    <item
+        android:id="@+id/categoryFragment"
+        android:icon="@drawable/ic_remove_red_eye_black_24dp"
+        android:orderInCategory="3"
+        android:title="دسته ها"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/savedFragment"
+        android:icon="@drawable/ic_bookmark_black_24dp"
+        android:orderInCategory="4"
+        android:title="علاقه مندی"
+        app:showAsAction="always" />
+
+</menu>

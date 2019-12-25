@@ -2,7 +2,11 @@ package diar.neo.simplemvp.feature.saved;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -67,4 +71,6 @@ public class SavedFragment extends BaseFragment implements SavedContract.View {
         adapter = new NewsAdapter(getViewContext(), news);
         recyclerView.setAdapter(adapter);
     }
+
+
 }
