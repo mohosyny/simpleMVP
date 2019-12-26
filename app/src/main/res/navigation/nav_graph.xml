@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_homeFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -20,6 +23,9 @@
         <action
             android:id="@+id/action_searchFragment_to_categoryFragment"
             app:destination="@id/categoryFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
     </fragment>
     <fragment
         android:id="@+id/categoryFragment"
@@ -28,11 +34,21 @@
         tools:layout="@layout/fragment_category" >
         <action
             android:id="@+id/action_categoryFragment_to_savedFragment"
-            app:destination="@id/savedFragment" />
+            app:destination="@id/savedFragment"
+            app:launchSingleTop="false" />
     </fragment>
     <fragment
         android:id="@+id/savedFragment"
         android:name="diar.neo.simplemvp.feature.saved.SavedFragment"
         android:label="fragment_saved"
-        tools:layout="@layout/fragment_saved" />
+        tools:layout="@layout/fragment_saved" >
+        <action
+            android:id="@+id/action_savedFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="diar.neo.simplemvp.feature.detail.DetailFragment"
+        android:label="activity_detail"
+        tools:layout="@layout/fragment_detail" />
 </navigation>

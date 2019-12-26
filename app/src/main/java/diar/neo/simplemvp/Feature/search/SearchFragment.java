@@ -96,7 +96,7 @@ public class SearchFragment extends BaseFragment implements SearchContract.View 
             txtNotFound.setVisibility(View.VISIBLE);
         }else {
             txtNotFound.setVisibility(View.GONE);
-            newsAdapter = new NewsAdapter(getViewContext(), newsList);
+            newsAdapter = new NewsAdapter(getViewContext(), newsList,SearchFragment.this);
             recyclerView.setAdapter(newsAdapter);
             newsAdapter.notifyDataSetChanged();
         }

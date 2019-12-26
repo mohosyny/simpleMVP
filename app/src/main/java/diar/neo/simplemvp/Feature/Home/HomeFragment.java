@@ -1,25 +1,17 @@
 package diar.neo.simplemvp.feature.home;
 
 import android.content.Context;
-import android.graphics.Path;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+
 import android.widget.ImageView;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
-
-import diar.neo.simplemvp.MainActivity;
 import diar.neo.simplemvp.R;
 import diar.neo.simplemvp.base.BaseFragment;
 import diar.neo.simplemvp.data.NewsAdapter;
@@ -44,7 +36,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.View {
     @Override
     public void showNews(List<News> news) {
 
-        newsRecycler.setAdapter(new NewsAdapter(getViewContext(),news));
+        newsRecycler.setAdapter(new NewsAdapter(getViewContext(),news,this));
     }
 
     @Override

@@ -1,8 +1,7 @@
 package diar.neo.simplemvp.data;
 
 import android.content.Context;
-import android.content.Intent;
-import android.content.res.Resources;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,6 +12,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,22 +22,24 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import diar.neo.simplemvp.Constants;
-import diar.neo.simplemvp.MainActivity;
 import diar.neo.simplemvp.data.local.NewsDataBase;
-import diar.neo.simplemvp.feature.detail.DetailActivity;
 import diar.neo.simplemvp.R;
 import diar.neo.simplemvp.data.model.News;
+import diar.neo.simplemvp.feature.home.HomeFragment;
+import diar.neo.simplemvp.feature.search.SearchFragment;
 
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
 
     private List<News> mNewsList;
     private Context mContext;
+    private Fragment fragment;
 
-    public NewsAdapter(Context context, List<News> news) {
+    public NewsAdapter(Context context, List<News> news, Fragment parentFragment) {
 
         mNewsList = news;
         mContext = context;
+        fragment=parentFragment;
     }
 
     @NonNull
@@ -62,14 +65,25 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             @Override
             public void onClick(View v) {
 
+                Bundle bundle=new Bundle();
+                bundle.putString(Constants.KEY_IMAGE,mNewsList.get(position).getImage_url());
+                bundle.putString(Constants.KEY_DESC,mNewsList.get(position).getDescription());
+                bundle.putString(Constants.KEY_TITLE,mNewsList.get(position).getTitle());
+                bundle.putString(Constants.KEY_DATE,mNewsList.get(position).getDate());
+                final NavController navController = Navigation.findNavController(fragment.getActivity(), R.id.navHost_fragment);
 
-                Intent intent = new Intent(mContext, DetailActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra(Constants.KEY_TITLE, mNewsList.get(position).getTitle());
-                intent.putExtra(Constants.KEY_DATE, mNewsList.get(position).getDate());
-                intent.putExtra(Constants.KEY_IMAGE, mNewsList.get(position).getImage_url());
-                intent.putExtra(Constants.KEY_DESC, mNewsList.get(position).getDescription());
-                mContext.startActivity(intent);
+                if (fragment instanceof SearchFragment){
+                    navController.navigate(R.id.action_searchFragment_to_detailFragment,bundle);
+
+                }else if (fragment instanceof HomeFragment){
+                    navController.navigate(R.id.action_homeFragment_to_detailFragment,bundle);
+
+                }else{
+                    navController.navigate(R.id.action_savedFragment_to_detailFragment,bundle);
+
+                }
+
+
             }
         });
         holder.imgBookmark.setOnClickListener(new OnClickListener() {

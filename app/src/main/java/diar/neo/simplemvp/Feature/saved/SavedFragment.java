@@ -68,7 +68,7 @@ public class SavedFragment extends BaseFragment implements SavedContract.View {
 
     @Override
     public void showSavedNews(List<News> news) {
-        adapter = new NewsAdapter(getViewContext(), news);
+        adapter = new NewsAdapter(getViewContext(), news,this);
         recyclerView.setAdapter(adapter);
     }
 
