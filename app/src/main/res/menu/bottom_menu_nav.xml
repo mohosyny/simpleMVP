@@ -5,14 +5,14 @@
         android:id="@+id/homeFragment"
         android:icon="@drawable/ic_library_books_black_24dp"
         android:orderInCategory="1"
-        android:title="اخبار"
+        android:title="@string/news"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/searchFragment"
         android:icon="@drawable/ic_search_black_24dp"
         android:orderInCategory="2"
-        android:title="جستجو"
+        android:title="@string/search"
         app:showAsAction="always" />
 
 
@@ -20,13 +20,13 @@
         android:id="@+id/categoryFragment"
         android:icon="@drawable/ic_remove_red_eye_black_24dp"
         android:orderInCategory="3"
-        android:title="دسته ها"
+        android:title="@string/category"
         app:showAsAction="always" />
     <item
         android:id="@+id/savedFragment"
         android:icon="@drawable/ic_bookmark_black_24dp"
         android:orderInCategory="4"
-        android:title="علاقه مندی"
+        android:title="@string/saved"
         app:showAsAction="always" />
 
 </menu>
