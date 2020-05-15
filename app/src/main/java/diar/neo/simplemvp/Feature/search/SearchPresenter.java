@@ -40,7 +40,7 @@ public class SearchPresenter implements SearchContract.Presenter {
     @Override
     public void getSearchedNews(CharSequence charSequence) {
         if (charSequence.length() > 0) {
-            newsDataSource.getSearchedNews(charSequence).subscribeOn(Schedulers.newThread())
+            newsDataSource.getSearchedNews(charSequence).subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(new SingleObserver<List<News>>() {
                         @Override

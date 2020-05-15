@@ -25,7 +25,7 @@ public class HomePresenter implements HomeContract.Presenter {
     @Override
     public void getNewsList() {
 
-        mNewsDataSource.getNews().subscribeOn(Schedulers.newThread())
+        mNewsDataSource.getNews().subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new SingleObserver<List<News>>() {
                     @Override

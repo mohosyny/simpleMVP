@@ -12,7 +12,7 @@ import diar.neo.simplemvp.data.model.News;
 @Database(entities = {News.class}, version = 1, exportSchema = false)
 public abstract class NewsDataBase extends RoomDatabase {
 
-    private static NewsDataBase instance;
+    private volatile static NewsDataBase instance;
     private static final String DB_NAME = "mohosyny.db";
 
     public synchronized static NewsDataBase getInstance(Context context) {

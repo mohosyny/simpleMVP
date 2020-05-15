@@ -38,7 +38,7 @@ public class CategoryPresenter implements CategoryContract.Presenter {
     @Override
     public void getCategory() {
 
-        mNewsDataSource.getCats().subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
+        mNewsDataSource.getCats().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new SingleObserver<List<Category>>() {
                     @Override
                     public void onSubscribe(Disposable d) {
