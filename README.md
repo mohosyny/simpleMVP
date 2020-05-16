@@ -1,8 +1,20 @@
 # simpleMVP
 a simple project with MVP , RxJava2, Room and Nvigation Component :)
 
-<img src="/screenshots/home.png" border="0"   width="200" height="400" alt="Home Fragment"   align="left" />
-<img src="/screenshots/search.png" border="0"   width="200" height="400" alt="Search Fragment"  />
-<img src="/screenshots/category.png" border="0"   width="200" height="400" alt="Category Fragment" align="top|right" />
-<img src="/screenshots/detail.png" border="0"   width="200" height="400" alt="Detail Activity" />
 
+<table>
+  <tr>
+    <td>Home Fragment</td>
+     <td>Search Fragment</td>
+     <td>Category Fragment</td>
+     <td>Detail Activity</td>
+
+  </tr>
+  <tr>
+    <td><img src="/screenshots/home.png" width=200 height=400></td>
+    <td><img src="/screenshots/search.png" width=200 height=400></td>
+    <td><img src="/screenshots/category.png" width=200 height=400></td>
+     <td><img src="/screenshots/detail.png" width=200 height=400></td>
+
+  </tr>
+ </table>
