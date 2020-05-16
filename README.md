@@ -11,10 +11,10 @@ a simple project with MVP , RxJava2, Room and Nvigation Component :)
 
   </tr>
   <tr>
-    <td><img src="/screenshots/home.png" width=200 height=400></td>
-    <td><img src="/screenshots/search.png" width=200 height=400></td>
-    <td><img src="/screenshots/category.png" width=200 height=400></td>
-     <td><img src="/screenshots/detail.png" width=200 height=400></td>
+    <td><img src="/screenshots/home.png" width=250 height=450></td>
+    <td><img src="/screenshots/search.png" width=250 height=450></td>
+    <td><img src="/screenshots/category.png" width=250 height=450></td>
+     <td><img src="/screenshots/detail.png" width=250 height=450></td>
 
   </tr>
  </table>
