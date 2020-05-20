@@ -1,5 +1,5 @@
 # simpleMVP
-a simple project with MVP , RxJava2, Room and Nvigation Component :)
+a simple project with MVP , RxJava2, Room and Navigation Component :)
 
 
 <table>
